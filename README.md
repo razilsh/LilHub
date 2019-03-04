@@ -1,0 +1,2 @@
+# LilHub
+Minimalist GitHub browser.
