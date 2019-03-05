@@ -153,6 +153,9 @@ object Libs {
     const val detekt_cli: String = "io.gitlab.arturbosch.detekt:detekt-cli:" +
             Versions.io_gitlab_arturbosch_detekt
 
+    const val detekt_formatting: String = "io.gitlab.arturbosch.detekt:detekt-formatting:" +
+            Versions.io_gitlab_arturbosch_detekt
+
     const val io_gitlab_arturbosch_detekt_gradle_plugin: String =
             "io.gitlab.arturbosch.detekt:io.gitlab.arturbosch.detekt.gradle.plugin:" +
             Versions.io_gitlab_arturbosch_detekt

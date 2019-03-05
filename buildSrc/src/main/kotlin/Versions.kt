@@ -17,7 +17,7 @@ object Versions {
 
     const val core_ktx: String = "1.1.0-alpha04" 
 
-    const val androidx_databinding: String = "3.3.1" 
+    const val androidx_databinding: String = "3.3.2"
 
     const val fragment_testing: String = "1.1.0-alpha04" 
 
@@ -35,9 +35,9 @@ object Versions {
 
     const val com_airbnb_android: String = "3.3.0" 
 
-    const val com_android_tools_build_gradle: String = "3.3.1" 
+    const val com_android_tools_build_gradle: String = "3.3.2"
 
-    const val lint_gradle: String = "26.3.1" 
+    const val lint_gradle: String = "26.3.2"
 
     const val apollo_gradle_plugin: String = "1.0.0-alpha5" 
 
@@ -83,7 +83,7 @@ object Versions {
 
         const val currentVersion: String = "5.2.1"
 
-        const val nightlyVersion: String = "5.4-20190303000048+0000"
+        const val nightlyVersion: String = "5.4-20190305000052+0000"
 
         const val releaseCandidate: String = ""
     }
