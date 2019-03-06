@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil.inflate
 import androidx.fragment.app.Fragment
 import dev.razil.lilhub.R
 import dev.razil.lilhub.databinding.HomeFragmentBinding
-import kotlinx.android.synthetic.main.home_fragment.*
 
 class HomeFragment : Fragment() {
     private lateinit var binding: HomeFragmentBinding
