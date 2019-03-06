@@ -4,22 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil.inflate
 import androidx.fragment.app.Fragment
 import dev.razil.lilhub.R
 import dev.razil.lilhub.databinding.HomeFragmentBinding
+import kotlinx.android.synthetic.main.home_fragment.*
 
 class HomeFragment : Fragment() {
+    private lateinit var binding: HomeFragmentBinding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return DataBindingUtil.inflate<HomeFragmentBinding>(
-            inflater,
-            R.layout.home_fragment,
-            container,
-            false
-        ).root
+        binding = inflate(inflater, R.layout.home_fragment, container, false)
+        return binding.root
     }
 }
