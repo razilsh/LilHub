@@ -1,4 +1,4 @@
-<resources>
+<dev.resources>
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -8,4 +8,4 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-</resources>
+</dev.resources>

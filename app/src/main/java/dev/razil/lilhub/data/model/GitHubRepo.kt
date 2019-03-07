@@ -1,14 +1,15 @@
 package dev.razil.lilhub.data.model
 
-import java.util.*
+import org.threeten.bp.Instant
 
 data class GitHubRepo(
     val id: String,
     val name: String,
+    val url: String,
     val nameWithOwner: String,
     val language: Language,
     val description: String,
     val stars: Int,
-    val createdAt: Date,
-    val updatedAt: Date
+    val createdAt: Instant,
+    val updatedAt: Instant
 )

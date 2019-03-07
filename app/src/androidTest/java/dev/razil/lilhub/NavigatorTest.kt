@@ -21,7 +21,6 @@ class NavigatorTest {
     @Before
     fun setUp() {
         activityScenario = ActivityScenario.launch(MainActivity::class.java)
-
     }
 
     @Test

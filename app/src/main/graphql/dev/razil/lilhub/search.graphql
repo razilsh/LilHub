@@ -1,0 +1,29 @@
+query SearchQuery($query: String!, $repositoriesCount: Int!, $after: String = null) {
+  search(first: $repositoriesCount, after: $after, query: $query, type: REPOSITORY) {
+    nodes {
+      ...GitHubRepoDTO
+    }
+    pageInfo {
+      startCursor
+      endCursor
+      hasNextPage
+    }
+  }
+}
+
+fragment GitHubRepoDTO on Repository {
+  id
+  url
+  nameWithOwner
+  primaryLanguage {
+    id
+    name
+    color
+  }
+  createdAt
+  updatedAt
+  description
+  stargazers {
+    totalCount
+  }
+}

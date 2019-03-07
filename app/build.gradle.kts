@@ -40,7 +40,7 @@ android {
         setCustomTypeMapping(
             mapOf(
                 "URI" to "java.lang.String",
-                "Date" to "java.util.Date",
+                "Date" to "org.threeten.bp.Instant",
                 "HTML" to "java.lang.String"
             )
         )

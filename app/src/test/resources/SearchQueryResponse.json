@@ -1,0 +1,48 @@
+{
+  "data": {
+    "search": {
+      "__typename": "SearchResultItemConnection",
+      "nodes": [
+        {
+          "__typename": "Repository",
+          "id": "MDEwOlJlcG9zaXRvcnkxNzEyNDQzNjU=",
+          "url": "https://github.com/Micropoor/Micro8",
+          "nameWithOwner": "Micropoor/Micro8",
+          "primaryLanguage": null,
+          "createdAt": "2019-02-18T08:30:52Z",
+          "updatedAt": "2019-03-07T12:29:24Z",
+          "description": "Gitbook",
+          "stargazers": {
+            "__typename": "StargazerConnection",
+            "totalCount": 11505
+          }
+        },
+        {
+          "__typename": "Repository",
+          "id": "MDEwOlJlcG9zaXRvcnkxNjkxNDkxMjc=",
+          "url": "https://github.com/pomber/git-history",
+          "nameWithOwner": "pomber/git-history",
+          "primaryLanguage": {
+            "__typename": "Language",
+            "id": "MDg6TGFuZ3VhZ2UxNDA=",
+            "name": "JavaScript",
+            "color": "#f1e05a"
+          },
+          "createdAt": "2019-02-04T21:00:39Z",
+          "updatedAt": "2019-03-07T12:25:25Z",
+          "description": "Quickly browse the history of a file from any git repository",
+          "stargazers": {
+            "__typename": "StargazerConnection",
+            "totalCount": 9468
+          }
+        }
+      ],
+      "pageInfo": {
+        "__typename": "PageInfo",
+        "startCursor": "Y3Vyc29yOjE=",
+        "endCursor": "Y3Vyc29yOjI=",
+        "hasNextPage": true
+      }
+    }
+  }
+}
