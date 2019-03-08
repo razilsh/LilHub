@@ -5,6 +5,7 @@ import dagger.Module
 import dagger.Provides
 import dev.razil.lilhub.BuildConfig
 import dev.razil.lilhub.common.DateAdapter
+import dev.razil.lilhub.common.UriAdapter
 import dev.razil.lilhub.type.CustomType
 import okhttp3.OkHttpClient
 import javax.inject.Singleton
@@ -29,6 +30,7 @@ class AppModule {
     fun provideApolloClient(okHttpClient: OkHttpClient): ApolloClient {
         return ApolloClient.builder()
             .addCustomTypeAdapter(CustomType.DATETIME, DateAdapter)
+            .addCustomTypeAdapter(CustomType.URI, UriAdapter)
             .okHttpClient(okHttpClient)
             .serverUrl("https://api.github.com/graphql").build()
     }
