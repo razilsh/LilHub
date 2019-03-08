@@ -1,4 +1,4 @@
-package dev.razil.lilhub.ui
+package dev.razil.lilhub.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
