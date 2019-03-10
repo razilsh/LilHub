@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     id("com.android.application")
     id("com.apollographql.android")
@@ -32,6 +34,9 @@ android {
     compileOptions {
         targetCompatibility = JavaVersion.VERSION_1_8
         sourceCompatibility = JavaVersion.VERSION_1_8
+    }
+    tasks.withType<KotlinCompile> {
+        kotlinOptions.jvmTarget = "1.8"
     }
     dataBinding {
         isEnabled = true
@@ -93,6 +98,7 @@ dependencies {
     testImplementation(Libs.mockk)
     testImplementation(Libs.kotlinx_coroutines_core)
     testImplementation(Libs.core_testing)
+    testImplementation(Libs.podam)
 
 
     androidTestImplementation(Libs.mockk_android)

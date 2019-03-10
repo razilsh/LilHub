@@ -1,5 +1,3 @@
-import kotlin.String
-
 /**
  * Find which updates are available by running
  *     `$ ./gradlew buildSrcVersions`
@@ -17,7 +15,7 @@ object Versions {
 
     const val core_ktx: String = "1.1.0-alpha04" 
 
-    const val androidx_databinding: String = "3.3.2"
+    const val androidx_databinding: String = "3.3.2" 
 
     const val fragment_testing: String = "1.1.0-alpha04" 
 
@@ -35,9 +33,9 @@ object Versions {
 
     const val com_airbnb_android: String = "3.3.0" 
 
-    const val com_android_tools_build_gradle: String = "3.3.2"
+    const val com_android_tools_build_gradle: String = "3.3.2" 
 
-    const val lint_gradle: String = "26.3.2"
+    const val lint_gradle: String = "26.3.2" 
 
     const val apollo_gradle_plugin: String = "1.0.0-alpha5" 
 
@@ -47,7 +45,7 @@ object Versions {
 
     const val com_google_dagger: String = "2.21" 
 
-    const val threetenabp: String = "1.1.2" 
+    const val threetenabp: String = "1.2.0"
 
     const val timber: String = "4.7.1" 
 
@@ -73,6 +71,8 @@ object Versions {
 
     const val junit_vintage_engine: String = "5.4.0" 
 
+    const val podam: String = "7.2.2.RELEASE" 
+
     /**
      *
      *   To update Gradle, edit the wrapper file at path:
@@ -83,8 +83,8 @@ object Versions {
 
         const val currentVersion: String = "5.2.1"
 
-        const val nightlyVersion: String = "5.4-20190305000052+0000"
+        const val nightlyVersion: String = "5.4-20190310000057+0000"
 
-        const val releaseCandidate: String = ""
+        const val releaseCandidate: String = "5.3-rc-1"
     }
 }
