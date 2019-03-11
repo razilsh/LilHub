@@ -45,7 +45,7 @@ object Versions {
 
     const val com_google_dagger: String = "2.21" 
 
-    const val threetenabp: String = "1.2.0"
+    const val threetenabp: String = "1.2.0" 
 
     const val timber: String = "4.7.1" 
 
@@ -71,6 +71,8 @@ object Versions {
 
     const val junit_vintage_engine: String = "5.4.0" 
 
+    const val threetenbp: String = "1.3.8"
+
     const val podam: String = "7.2.2.RELEASE" 
 
     /**
@@ -83,7 +85,7 @@ object Versions {
 
         const val currentVersion: String = "5.2.1"
 
-        const val nightlyVersion: String = "5.4-20190310000057+0000"
+        const val nightlyVersion: String = "5.4-20190311000052+0000"
 
         const val releaseCandidate: String = "5.3-rc-1"
     }

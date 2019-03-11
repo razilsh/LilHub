@@ -223,6 +223,10 @@ object Libs {
             Versions.junit_vintage_engine
 
     /**
+     * https://www.threeten.org/threetenbp */
+    const val threetenbp: String = "org.threeten:threetenbp:" + Versions.threetenbp
+
+    /**
      * http://devopsfolks.github.io/podam/ */
     const val podam: String = "uk.co.jemos.podam:podam:" + Versions.podam
 }

@@ -1,7 +1,19 @@
 package dev.razil.lilhub.ui.home
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import dev.razil.lilhub.common.Result
 import dev.razil.lilhub.data.Repository
+import dev.razil.lilhub.data.model.GitHubRepo
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import org.threeten.bp.Instant
+import org.threeten.bp.ZoneId
+import org.threeten.bp.format.DateTimeFormatter
+import org.threeten.bp.temporal.ChronoUnit
+import java.util.Locale
 import javax.inject.Inject
 
 /**
@@ -9,4 +21,46 @@ import javax.inject.Inject
  *
  * @param repo An instance of [Repository]
  */
-class HomeViewModel @Inject constructor(private val repo: Repository) : ViewModel()
+class HomeViewModel @Inject constructor(private val repo: Repository) : ViewModel() {
+
+    private val _trendingRepos = MutableLiveData<Result<List<GitHubRepo>, Exception>>()
+    val trendingRepos: LiveData<Result<List<GitHubRepo>, Exception>>
+        get() = _trendingRepos
+
+    init {
+        loadRepos()
+    }
+
+    private fun loadRepos() = viewModelScope.launch(Dispatchers.IO) {
+        val result = Result.ofCo<List<GitHubRepo>, Exception> {
+            repo.search(trendingReposQuery, REPO_COUNT).listData
+        }
+
+        _trendingRepos.postValue(result)
+    }
+
+    /**
+     * Find the hottest repositories created in the last week
+     * Example taken from [this gist](https://gist.github.com/jasonrudolph/6065289)
+     */
+    private val trendingReposQuery: String
+        get() {
+            val instant = Instant.now().minus(DAYS_AGO, ChronoUnit.DAYS)
+            val date = DateTimeFormatter
+                .ofPattern("YYYY-MM-dd")
+                .withLocale(Locale.ENGLISH)
+                .withZone(ZoneId.systemDefault())
+                .format(instant)
+            return "created:>$date sort:stars"
+        }
+
+    companion object {
+        /**
+         * Number of trending repositories to fetch
+         * Default value = 10
+         */
+        const val REPO_COUNT = 10
+
+        const val DAYS_AGO = 7L
+    }
+}

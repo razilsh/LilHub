@@ -13,11 +13,9 @@ import javax.inject.Inject
  * @param apolloClient An instance of [ApolloClient]
  */
 class GitHubService @Inject constructor(private val apolloClient: ApolloClient) {
-    suspend fun search(
-        query: String,
-        repoCount: Int,
-        after: String? = null
-    ) = apolloClient
-        .query(SearchQuery(query, repoCount, Input.fromNullable(after)))
-        .toDeferred().toListResponse()
+    suspend fun search(query: String, repoCount: Int, after: String? = null) =
+        apolloClient
+            .query(SearchQuery(query, repoCount, Input.fromNullable(after)))
+            .toDeferred()
+            .toListResponse()
 }

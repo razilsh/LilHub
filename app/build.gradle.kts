@@ -99,6 +99,9 @@ dependencies {
     testImplementation(Libs.kotlinx_coroutines_core)
     testImplementation(Libs.core_testing)
     testImplementation(Libs.podam)
+    testImplementation(Libs.threetenbp) {
+        exclude(group = "com.jakewharton.threetenabp", module = "threetenabp")
+    }
 
 
     androidTestImplementation(Libs.mockk_android)

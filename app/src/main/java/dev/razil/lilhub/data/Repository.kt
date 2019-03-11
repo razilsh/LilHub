@@ -1,6 +1,8 @@
 package dev.razil.lilhub.data
 
 import dev.razil.lilhub.api.GitHubService
+import dev.razil.lilhub.api.ListResponse
+import dev.razil.lilhub.data.model.GitHubRepo
 import javax.inject.Inject
 
 /**
@@ -11,4 +13,8 @@ import javax.inject.Inject
  *
  * @param service An instance of [GitHubService]
  */
-class Repository @Inject constructor(private val service: GitHubService)
+class Repository @Inject constructor(private val service: GitHubService) {
+    suspend fun search(query: String, repoCount: Int, after: String? = null): ListResponse<GitHubRepo> {
+        return service.search(query, repoCount, after)
+    }
+}
