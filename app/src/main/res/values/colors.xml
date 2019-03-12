@@ -5,5 +5,5 @@
     <color name="colorPrimaryDarker">#26282F</color>
     <color name="colorAccent">#1EB980</color>
     <color name="colorTextPrimary">#FFFFFF</color>
-    <color name="colorTextSecondary">#ccc</color>
+    <color name="colorTextSecondary">#eee</color>
 </resources>

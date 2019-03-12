@@ -66,7 +66,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun updateUI(repos: List<GitHubRepo>) {
-
         repoList.addItemDecoration(dividerItemDecoration)
         repoList.buildModelsWith { controller ->
             repos.forEach { gitHubRepo ->

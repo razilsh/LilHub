@@ -5,6 +5,7 @@ import dev.razil.lilhub.SearchQuery
 import dev.razil.lilhub.api.ListResponse
 import dev.razil.lilhub.data.model.GitHubRepo
 import dev.razil.lilhub.data.model.Language
+import dev.razil.lilhub.data.model.Owner
 import dev.razil.lilhub.fragment.GitHubRepoDTO
 import kotlinx.coroutines.Deferred
 import org.threeten.bp.Instant
@@ -16,7 +17,7 @@ import org.threeten.bp.format.DateTimeParseException
 
 fun GitHubRepoDTO.getName(): String {
     val parts = nameWithOwner().split("/")
-    return if (parts.isEmpty()) nameWithOwner() else parts[0]
+    return if (parts.isEmpty()) nameWithOwner() else parts.last()
 }
 
 fun GitHubRepoDTO.created() = parseDate(createdAt().toString())
@@ -46,6 +47,7 @@ fun GitHubRepoDTO.toModel() = GitHubRepo(
     name = getName(),
     url = url(),
     nameWithOwner = nameWithOwner(),
+    owner = owner().toModel(),
     language = primaryLanguage()?.toModel(),
     description = description() ?: "",
     stars = stargazers().totalCount(),
@@ -53,6 +55,8 @@ fun GitHubRepoDTO.toModel() = GitHubRepo(
     createdAt = created(),
     updatedAt = updated()
 )
+
+fun GitHubRepoDTO.Owner.toModel(): Owner = Owner(id(), login(), avatarUrl())
 
 fun GitHubRepoDTO.PrimaryLanguage.toModel(): Language {
     val id = id()

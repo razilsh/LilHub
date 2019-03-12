@@ -6,6 +6,7 @@ data class GitHubRepo(
     val id: String,
     val name: String,
     val url: String,
+    val owner: Owner,
     val nameWithOwner: String,
     val language: Language?,
     val description: String,

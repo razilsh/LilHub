@@ -19,19 +19,35 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@{repo.owner.login}"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="14sp"
+            android:fontFamily="@font/worksans_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="razilsh" />
+
+        <TextView
             android:id="@+id/nameWithOwner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:text="@{repo.nameWithOwner}"
+            android:text="@{repo.name}"
             android:textColor="@color/colorTextPrimary"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="lorem / ipsum" />
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:text="LilHub" />
 
         <TextView
             android:id="@+id/description"
@@ -101,6 +117,7 @@
             app:layout_constraintStart_toEndOf="@+id/stars"
             app:layout_constraintTop_toBottomOf="@+id/description"
             tools:text="250" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
