@@ -49,6 +49,7 @@ fun GitHubRepoDTO.toModel() = GitHubRepo(
     language = primaryLanguage()?.toModel(),
     description = description() ?: "",
     stars = stargazers().totalCount(),
+    forks = forks().totalCount(),
     createdAt = created(),
     updatedAt = updated()
 )

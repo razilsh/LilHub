@@ -1,6 +1,7 @@
 package dev.razil.lilhub.di
 
 import com.apollographql.apollo.ApolloClient
+import com.apollographql.apollo.api.ScalarType
 import dagger.Module
 import dagger.Provides
 import dev.razil.lilhub.BuildConfig
@@ -30,7 +31,15 @@ class AppModule {
     fun provideApolloClient(okHttpClient: OkHttpClient): ApolloClient {
         return ApolloClient.builder()
             .addCustomTypeAdapter(CustomType.DATETIME, DateAdapter)
-            .addCustomTypeAdapter(CustomType.URI, UriAdapter)
+            .addCustomTypeAdapter(object : ScalarType {
+                override fun javaType(): Class<*> {
+                    return String::class.java
+                }
+
+                override fun typeName(): String {
+                    return "URI"
+                }
+            }, UriAdapter)
             .okHttpClient(okHttpClient)
             .serverUrl("https://api.github.com/graphql").build()
     }

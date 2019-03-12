@@ -20,6 +20,9 @@ fragment GitHubRepoDTO on Repository {
     name
     color
   }
+  forks {
+      totalCount
+  }
   createdAt
   updatedAt
   description
