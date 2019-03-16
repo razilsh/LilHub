@@ -83,6 +83,7 @@ dependencies {
 
     implementation(Libs.epoxy)
     implementation(Libs.epoxy_databinding)
+    implementation(Libs.epoxy_paging)
     kapt(Libs.epoxy_processor)
 
     implementation(Libs.dagger)

@@ -3,6 +3,7 @@ package dev.razil.lilhub
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil.setContentView
 import androidx.navigation.NavController
@@ -22,6 +23,13 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(appBar)
 
         navController = findNavController(R.id.navHost)
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if (destination.id == R.id.searchFragment) {
+                appBar.visibility = View.GONE
+            } else {
+                appBar.visibility = View.VISIBLE
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -35,8 +43,8 @@ class MainActivity : AppCompatActivity() {
             false
         }
         R.id.search -> {
-            // TODO Implement search
-            false
+            navController.navigate(R.id.searchFragment)
+            true
         }
         else -> {
             super.onOptionsItemSelected(item)

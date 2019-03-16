@@ -4,9 +4,13 @@
  * Update this file with
  *   `$ ./gradlew buildSrcVersions` */
 object Libs {
+    /**
+     * https://developer.android.com/topic/libraries/architecture/index.html */
     const val navigation_fragment_ktx: String = "android.arch.navigation:navigation-fragment-ktx:" +
             Versions.android_arch_navigation
 
+    /**
+     * https://developer.android.com/topic/libraries/architecture/index.html */
     const val navigation_ui_ktx: String = "android.arch.navigation:navigation-ui-ktx:" +
             Versions.android_arch_navigation
 
@@ -80,6 +84,11 @@ object Libs {
     /**
      * https://github.com/airbnb/epoxy */
     const val epoxy_databinding: String = "com.airbnb.android:epoxy-databinding:" +
+            Versions.com_airbnb_android
+
+    /**
+     * https://github.com/airbnb/epoxy */
+    const val epoxy_paging: String = "com.airbnb.android:epoxy-paging:" +
             Versions.com_airbnb_android
 
     /**

@@ -2,7 +2,8 @@
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary">
 
     <data />
 
@@ -12,6 +13,7 @@
         tools:context=".MainActivity">
 
         <fragment
+            android:background="@color/colorPrimary"
             android:id="@+id/navHost"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
@@ -20,14 +22,13 @@
             app:navGraph="@navigation/nav_graph" />
 
         <com.google.android.material.bottomappbar.BottomAppBar
-            app:layout_anchorGravity="bottom"
             android:id="@+id/appBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             app:backgroundTint="@color/colorPrimaryDark"
-            app:elevation="16dp"
             app:hideOnScroll="true"
+            app:layout_anchorGravity="bottom"
             app:navigationIcon="@drawable/ic_menu" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

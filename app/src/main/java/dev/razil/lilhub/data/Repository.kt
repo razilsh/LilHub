@@ -14,7 +14,7 @@ import javax.inject.Inject
  * @param service An instance of [GitHubService]
  */
 class Repository @Inject constructor(private val service: GitHubService) {
-    suspend fun search(query: String, repoCount: Int, after: String? = null): ListResponse<GitHubRepo> {
+    suspend fun search(query: String, repoCount: Int = 10, after: String? = null): ListResponse<GitHubRepo> {
         return service.search(query, repoCount, after)
     }
 }

@@ -31,13 +31,19 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import dev.razil.lilhub.ui.home.HomeViewModel
 import dev.razil.lilhub.ui.home.HomeViewModelFactory
+import dev.razil.lilhub.ui.search.SearchViewModel
 
 @Module
 abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(HomeViewModel::class)
-    abstract fun bindMovieViewModel(repoViewModel: HomeViewModel): ViewModel
+    abstract fun bindHomeViewModel(repoViewModel: HomeViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(SearchViewModel::class)
+    abstract fun bindSearchViewModel(searchViewModel: SearchViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: HomeViewModelFactory): ViewModelProvider.Factory
