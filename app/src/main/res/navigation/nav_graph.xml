@@ -6,5 +6,13 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="dev.razil.lilhub.ui.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment2"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="dev.razil.lilhub.ui.search.SearchFragment"
+        android:label="SearchFragment" />
 </navigation>
