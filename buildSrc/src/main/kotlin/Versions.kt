@@ -41,6 +41,8 @@ object Versions {
 
     const val apollo_runtime: String = "1.0.1-SNAPSHOT" 
 
+    const val com_github_bumptech_glide: String = "4.9.0" 
+
     const val material: String = "1.1.0-alpha04" 
 
     const val com_google_dagger: String = "2.21" 
@@ -85,7 +87,7 @@ object Versions {
 
         const val currentVersion: String = "5.2.1"
 
-        const val nightlyVersion: String = "5.4-20190316000113+0000"
+        const val nightlyVersion: String = "5.4-20190317000113+0000"
 
         const val releaseCandidate: String = "5.3-rc-3"
     }

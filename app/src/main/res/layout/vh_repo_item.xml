@@ -33,13 +33,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/worksans_regular"
                 android:text="@{repo.owner.login}"
-                android:textColor="@color/colorTextPrimary"
+                android:textColor="#ccc"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/barrier"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="razilsh" />
@@ -53,10 +53,9 @@
                 android:fontFamily="@font/worksans_semibold"
                 android:text="@{repo.name}"
                 android:textColor="@color/colorTextPrimary"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintEnd_toEndOf="@+id/barrier"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView"
                 tools:text="LilHub" />
@@ -67,14 +66,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
                 android:ellipsize="end"
-                android:fontFamily="@font/worksans_light"
-                android:maxLines="5"
+                android:fontFamily="@font/worksans_regular"
+                android:maxLines="10"
                 android:text="@{repo.description}"
-                android:textColor="@color/colorTextSecondary"
+                android:textColor="@color/colorTextPrimary"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/barrier"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/name"
                 tools:text="@tools:sample/lorem/random" />
@@ -101,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="16dp"
                 android:drawableStart="@drawable/ic_star"
                 android:drawablePadding="5dp"
                 android:gravity="center"
@@ -133,6 +132,25 @@
                 app:layout_constraintStart_toEndOf="@+id/stars"
                 app:layout_constraintTop_toBottomOf="@+id/description"
                 tools:text="250" />
+
+            <ImageView
+                android:id="@+id/avatar"
+                imageUrl="@{repo.owner.avatarUrl}"
+                android:layout_width="@dimen/avatar_width"
+                android:layout_height="@dimen/avatar_height"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="left"
+                app:constraint_referenced_ids="avatar"
+                tools:layout_editor_absoluteX="401dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </layout>

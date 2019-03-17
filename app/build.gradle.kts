@@ -86,6 +86,10 @@ dependencies {
     implementation(Libs.epoxy_paging)
     kapt(Libs.epoxy_processor)
 
+    implementation(Libs.glide)
+    implementation(Libs.okhttp3_integration)
+    kapt(Libs.com_github_bumptech_glide_compiler)
+
     implementation(Libs.dagger)
     kapt(Libs.dagger_compiler)
 

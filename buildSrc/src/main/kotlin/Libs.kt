@@ -120,6 +120,21 @@ object Libs {
             Versions.apollo_runtime
 
     /**
+     * https://github.com/bumptech/glide */
+    const val com_github_bumptech_glide_compiler: String = "com.github.bumptech.glide:compiler:" +
+            Versions.com_github_bumptech_glide
+
+    /**
+     * https://github.com/bumptech/glide */
+    const val glide: String = "com.github.bumptech.glide:glide:" +
+            Versions.com_github_bumptech_glide
+
+    /**
+     * https://github.com/bumptech/glide */
+    const val okhttp3_integration: String = "com.github.bumptech.glide:okhttp3-integration:" +
+            Versions.com_github_bumptech_glide
+
+    /**
      * http://developer.android.com/tools/extras/support-library.html */
     const val material: String = "com.google.android.material:material:" + Versions.material
 
