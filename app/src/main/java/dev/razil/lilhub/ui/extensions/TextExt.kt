@@ -29,6 +29,7 @@ fun TextInputLayout.onSubmit(input: (String) -> Unit) {
             val s = v.text.toString()
             if (s.isNotBlank()) {
                 input(v.text.toString())
+                hideKeyboard()
             }
             true
         } else {

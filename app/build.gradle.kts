@@ -108,7 +108,6 @@ dependencies {
         exclude(group = "com.jakewharton.threetenabp", module = "threetenabp")
     }
 
-
     androidTestImplementation(Libs.mockk_android)
     androidTestImplementation(Libs.androidx_test_runner)
     androidTestImplementation(Libs.androidx_test_rules)
@@ -117,4 +116,8 @@ dependencies {
     androidTestImplementation(Libs.espresso_core)
     androidTestImplementation(Libs.core_testing)
     androidTestImplementation(Libs.androidx_test_core)
+    androidTestImplementation(Libs.barista) {
+        exclude("com.android.support")
+        exclude("org.jetbrains.kotlin") // Only if you already use Kotlin in your project
+    }
 }

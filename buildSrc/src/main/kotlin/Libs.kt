@@ -156,6 +156,8 @@ object Libs {
      * https://github.com/JakeWharton/timber */
     const val timber: String = "com.jakewharton.timber:timber:" + Versions.timber
 
+    const val barista: String = "com.schibsted.spain:barista:" + Versions.barista
+
     /**
      * https://github.com/square/okhttp */
     const val logging_interceptor: String = "com.squareup.okhttp3:logging-interceptor:" +

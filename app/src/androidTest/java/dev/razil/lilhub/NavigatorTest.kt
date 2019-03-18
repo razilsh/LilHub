@@ -2,16 +2,17 @@ package dev.razil.lilhub
 
 import androidx.navigation.findNavController
 import androidx.test.core.app.ActivityScenario
-import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.assertion.ViewAssertions.matches
-import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
-import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
 import com.google.common.truth.Truth.assertThat
+import com.schibsted.spain.barista.assertion.BaristaVisibilityAssertions.assertNotDisplayed
+import com.schibsted.spain.barista.interaction.BaristaMenuClickInteractions.clickMenu
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.junit.runner.RunWith
 
+@RunWith(AndroidJUnit4::class)
 class NavigatorTest {
     private lateinit var activityScenario: ActivityScenario<MainActivity>
 
@@ -33,7 +34,10 @@ class NavigatorTest {
     }
 
     @Test
-    fun repoList_isDisplayed() {
-        onView(withId(R.id.repoList)).check(matches(isDisplayed()))
+    fun onClickSearchIconNavigatesToSearchFragment() {
+        clickMenu(R.id.search)
+        val navController = activityRule.activity.findNavController(R.id.navHost)
+        assertThat(navController.currentDestination?.id).isEqualTo(R.id.searchFragment)
+        assertNotDisplayed(R.id.appBar)
     }
 }
